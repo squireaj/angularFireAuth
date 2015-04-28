@@ -11,7 +11,8 @@ app.service('userService', function(fb, $q, $firebaseAuth, $firebaseObject) {
   this.register = function(userObj) {
     authObj.$createUser({
       email: userObj.email,
-      password: userObj.password
+      password: userObj.password,
+      username: userObj.name
     }).then(function(userData) {
       console.log('user' + userData + ' created successfully');
 

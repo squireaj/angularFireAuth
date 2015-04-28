@@ -13,6 +13,7 @@ app.controller('loginCtrl', function($scope, $location, $firebaseAuth, $firebase
       user.$loaded().then(function(user) {
         if(!user.email) {
           user.email = authData.password.email;
+          console.log(user);
           user.$save();
         }
       });
@@ -22,11 +23,7 @@ app.controller('loginCtrl', function($scope, $location, $firebaseAuth, $firebase
   });
 
   $scope.register = function(userEmail, userPassword, username) {
-    var obj = {
-      email: userEmail,
-      password: userPassword,
-      username: username
-    };
+    user.name = username;
     userService.register(user);
   };
 
